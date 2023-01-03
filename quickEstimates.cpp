@@ -2,21 +2,21 @@
 using namespace std ;
 
 int main(){
-    long long unsigned int a , b , i , c=0;
+    long long unsigned int a , b , i , tot = 0 ; 
 
-    cin >> a ;
+    cin >>  a ;
 
-    for(i=0;i<a;i++){
-        cin >>b ;
-        b == 0 ? c= 1 : c = c ;
-        while ( b!=0){
-         
-            b/=10;
-            c++;
+    for(i=0 ; i < a ;i++){
+        cin >> b ; 
+        if(b ==0){
+            tot++;
         }
-       
-
-        cout << c << endl ;
-        c = 0 ;
+        while (b!=0){
+            b/=10 ; 
+            tot++;
+        }
+        
+        cout << tot << endl ; 
+        tot = 0 ;
     }
 }
