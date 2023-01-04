@@ -1,26 +1,20 @@
-#include <iostream>
-#include <string.h>
-
+#include <iostream> 
 using namespace std ; 
+#include <cstring>
 
 int main(){
-    int a  , i , j , c =0, tot=0; 
+    int a  , tot , i , len;
     cin >> a ; 
-
-    char s [a][1100]; 
-    for(i=0;i<a;i++){
-        cin >> s[a];
-        int len = strlen(s[a]);
-        for(j=0 ; j < len ; j++);
-        if(s[a][j]=='C'&& s[a][j+1]=='D'){
-            c = c ;
-        } else {
-            c++;
-        }
-        if(c == len){
-            tot++;
-        } else {
-            tot = tot ;
+    
+    tot = a ;
+    string s[a];
+    for(i = 0 ; i < a ; i++){
+        cin >> s[i];
+        len = s[i].length();
+        for(int j = 0 ; j < len ; j++){
+            if((s[i][j]=='C')&&(s[i][j+1]=='D')){
+                tot--;
+            }
         }
     }
     cout << tot << endl ;
