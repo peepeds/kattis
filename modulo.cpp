@@ -2,7 +2,7 @@
 using namespace std ;
 
 int main(){
-    int  a[10],i , j , k  , c= 0;
+    int  a[10],i , j , k  , counter= 0;
 
     for(i=0 ; i < 10 ; i++){
         cin >>a[i];
@@ -20,9 +20,9 @@ int main(){
     }
     for(i=0 ; i < 10;i++){
         if(a[i]!=a[i+1]){
-            c++;
+            counter++;
         }
     }
-    cout << c << endl ;
+    cout << counter << endl ;
 
 }
