@@ -1,26 +1,28 @@
-#include <iostream>
-#include <algorithm>
+#include <iostream> 
 using namespace std ;
 
 int main(){
-    int a[10] = {0} , j , k;
-    int counter  = 0 ,c;
-   
-    for(int i = 0 ; i < 10 ;i++){
-        scanf("%d",&a[i]);
+    int  a[10],i , j , k  , c= 0;
+
+    for(i=0 ; i < 10 ; i++){
+        cin >>a[i];
+        a[i] %= 42 ;
     }
-    for(int i = 0 ; i < 10 ;i++){
-        a[i]  %= 42 ; 
-        sort(a,a+10);
-        if(a[i]==0){
-            a[i] = 1 ;
-        }
-    for(int j = 0 ; j < 10 ; j++){
-        cout << a[j] <<' ' ;
-    }
-        if(a[i]> counter){
-            counter++ ;
+
+    for(i=0 ; i < 9 ;i++){
+        for(j=i+1 ; j < 10 ; j++){
+            if(a[i]>a[j]){
+                int tmp = a[i];
+                a[i]= a[j];
+                a[j] = tmp ;
+            }
         }
     }
-   // cout << counter << endl ;
+    for(i=0 ; i < 10;i++){
+        if(a[i]!=a[i+1]){
+            c++;
+        }
+    }
+    cout << c << endl ;
+
 }
