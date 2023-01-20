@@ -1,33 +1,30 @@
-#include <iostream>
+#include <iostream> 
+
 using namespace std ; 
 
 int main(){
-    int a , b ;
-    cin  >> a ; 
-    int i,j, tot = 0;
-    int counter = 0 ;
-    double persen = 0 ;
-
-    for(i=0;i<a;i++){
-        cin >> b ;
+    int a ,b , i , j , k ;
+    cin >> a ; 
+    
+    for(i=0 ; i < a ;i++){
+        cin >> b ; 
         int c[b];
-        for(j=0;j<b;j++){
-            cin >>c[j];
-
-        }
-        for(j=0;j<b;j++){
+        int tot=0;
+        double rata=0 , counter=0 ,hasil=0;
+        for(j=0 ;j < b ;j++){
+            cin >> c[j];
             tot+= c[j];
-    
         }
-        tot = tot / b ;
+        rata = tot / b ;
         
-        for(j=0;j<b;j++){
-            c[j]>tot ? counter++ : counter = counter ;
-            
+        for(j=0 ; j < b ;j++){
+            if(c[j]>rata){
+                counter++;
+            }
         }
-       
+        hasil = counter / b ;
+        
+        printf("%.3lf%c\n",hasil*100,'%');
     }
-
     
-  
 }
