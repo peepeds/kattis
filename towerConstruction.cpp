@@ -2,18 +2,17 @@
 using namespace std ; 
 
 int main(){
-    int a ,i , c; 
-    cin >> a ; 
-    int b[10];
-
-    for(i = 0 ; i < a ;i++){
-        cin >> b[i];
-    }
-    for(i = 0; i < a ;i++){
-        if(b[i]== b[i+1]){
-            c = i +1 ; 
-            break;
+    int tot = 0 ; 
+    int n  , i  , x  , tmp =0 ; 
+    cin >> n ; 
+    for(i=0 ; i < n ; i++){
+        cin >> x  ; 
+        if (x > tmp){
+            tot++ ;
+            tmp = x ; 
+        }  else if ( x <= tmp){
+            tmp = x ; 
         }
     }
-    cout << c << endl ;
+    cout << tot  << endl; 
 }
